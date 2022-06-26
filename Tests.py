@@ -7,6 +7,7 @@ from selenium.webdriver.common.by import By
 from selenium.common.exceptions import TimeoutException
 import matplotlib.pyplot as plt
 import seaborn as sns
+import numpy as np
 
 #URLs
 website = "https://servicios.pami.org.ar/vademecum/views/consultaPublica/listado.zul"
@@ -20,6 +21,7 @@ input_2 = input("ingrese su farmaco: ")
 driver = webdriver.Chrome(executable_path=r"C:\Users\segui\Downloads\chromedriver.exe")
 driver.get(website2)
 driver.maximize_window()
+
 def keys(XPATH):
     WebDriverWait(driver, 5).until(
         EC.element_to_be_clickable((By.XPATH, XPATH))) \
@@ -129,5 +131,27 @@ elif input_2 not in x:
 #Visualizacion de datos
 data_base = pd.read_csv("Vademecum.csv")
 data_base.to_csv("sample.csv", index=False, header=False, mode= "a")
-sns.scatterplot(x="Precio", y='Droga', data=data_base)
+"""sns.scatterplot(x="Precio", y='Droga', data=data_base)
+plt.show()"""
+
+"""tips = sns.load_dataset('tips')
+sns.lmplot(x ='Precio', y ='Droga', size = 2, aspect = 4, data = data_base)"""
+
+
+"""sns.set(style="ticks")
+# Loading the dataset
+data = sns.load_dataset(data_base)
+# Show the results of a linear regression
+sns.lmplot(x="Precio", y='Droga', data=data)
+"""
+data = pd.read_csv("sample.csv")
+sns.set_theme(style="whitegrid")
+sns.scatterplot(x="Precio", y='Droga', data=data)
+# Make an example dataset with y ~ x
+
+# Plot the residuals after fitting a linear model
+#sns.residplot(x= "Precio", y= "Droga", lowess=True, color="g")
+
+plt.title('Graph')
+plt.savefig("plot.png", bbox_inches= "tight", pad_inches= 2, transparent= True)
 plt.show()
