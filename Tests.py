@@ -135,31 +135,3 @@ if input_2 in x:
     print(df_data)
 elif input_2 not in x:
     print(f"{input_2} no coincide con la base de datos")
-
-#Visualizacion de datos
-data_base = pd.read_csv("Vademecum.csv")
-data_base.to_csv("sample.csv", index=False, header=False, mode= "a")
-"""sns.scatterplot(x="Precio", y='Droga', data=data_base)
-plt.show()"""
-
-"""tips = sns.load_dataset('tips')
-sns.lmplot(x ='Precio', y ='Droga', size = 2, aspect = 4, data = data_base)"""
-
-
-"""sns.set(style="ticks")
-# Loading the dataset
-data = sns.load_dataset(data_base)
-# Show the results of a linear regression
-sns.lmplot(x="Precio", y='Droga', data=data)
-"""
-data = pd.read_csv("sample.csv")
-sns.set_theme(style="whitegrid")
-sns.scatterplot(x="Precio", y='Droga', data=data)
-# Make an example dataset with y ~ x
-
-# Plot the residuals after fitting a linear model
-#sns.residplot(x= "Precio", y= "Droga", lowess=True, color="g")
-
-plt.title('Graph')
-plt.savefig("plot.png", bbox_inches= "tight", pad_inches= 2, transparent= True)
-plt.show()
