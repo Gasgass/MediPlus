@@ -17,7 +17,7 @@ input_1 = input("Ingrese su patologia: ")
 input_2 = input("ingrese su farmaco: ")
 
 #WebScraping patologias
-driver = webdriver.Chrome(executable_path=r"C:\Users\segui\Downloads\chromedriver.exe")
+driver = webdriver.Chrome(executable_path=r"C:\Users\segui\PycharmProjects\pythonProject4\chromedriver.exe")
 driver.get(website2)
 driver.maximize_window()
 #Funciones de busqueda para el scrap
@@ -53,7 +53,7 @@ drogas = [ele for ele in drogas if ele.strip()]
 
 farmaco = []
 for i in range(len(drogas)):
-    data = {"Manejo y tratamiento" : drogas[i] }
+    data = {"Manejo y tratamiento" : drogas[i]}
     farmaco.append(data)
 print(farmaco)
 driver.quit()
@@ -68,7 +68,7 @@ file.flush()
 file.close()
 
 #WebScraping Vademecum
-driver = webdriver.Chrome(executable_path=r"C:\Users\segui\Downloads\chromedriver.exe")
+driver = webdriver.Chrome(executable_path=r"C:\Users\segui\PycharmProjects\pythonProject4\chromedriver.exe")
 driver.get(website)
 #Defino las funciones
 def keys_2(XPATH):
