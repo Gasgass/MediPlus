@@ -1,0 +1,13 @@
+Hola Francisco, este programa requiere algunas instancias que quiero tratar de simplificartelas un poco, para eso grabe un video y lo subi a YouTube
+para mostrate, primero que funciona y despues como funciona. Tambien te adjunto el repositorio con el que fui trabajando con Git y GitHub.
+El webdriver que esta en la carpeta de github es la version 103 de chrome, por si lo necesitas te dejo el link a la pagina de los drivers de chrome. 
+
+Links:
+YouTube
+-
+
+GitHub
+-https://github.com/Gasgass/MediPlus
+
+Google 
+-https://chromedriver.chromium.org/downloads
