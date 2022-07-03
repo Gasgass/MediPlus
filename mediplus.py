@@ -148,6 +148,7 @@ def scrap_precios():
 
 #Defino una funcion para imprimir un grafico por cada farmaco
 def grafica():
+    #Data Visualization
     csv = pd.read_csv("C:\\Users\\segui\\PycharmProjects\\pythonProject4\\"f"{input_2}.csv")
     sns.set_theme(style="ticks", palette="pastel")
     f, ax = plt.subplots(figsize=(30, 15))
@@ -205,7 +206,4 @@ if input_2 in x:
 elif input_2 not in x:
     print(f"{input_2} no coincide con la base de datos")
 driver.quit()
-
-#Data Visualization
-
 quit()
