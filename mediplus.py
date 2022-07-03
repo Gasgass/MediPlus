@@ -11,7 +11,7 @@ from selenium.webdriver.common.by import By
 from selenium.common.exceptions import TimeoutException
 """"Antes de empezar tengo que aclarar que todos los paths a archivos estan linkeados a mi pc y tienen mis direcciones, 
 para que funcione el programa en otra pc hay que cambiar las lineas: 23, 76 y 148.
-Tambien se van a generar cuatro archivos en el directorio donde este alojado el programa."""
+Tambien se van a generar cinco archivos en el directorio donde este alojado el programa, un txt, tres csv y un png."""
 #URLs
 website = "https://servicios.pami.org.ar/vademecum/views/consultaPublica/listado.zul"
 website2 = "https://www.tuotromedico.com/"
@@ -130,16 +130,18 @@ def scrap_precios():
         XPATH="/html/body/div[1]/div/div/div/div[2]/div/div/div[2]/div[3]/table/tbody[1]/tr/td[7]/span")
 
     # Este bucle se encarga de tomar todos los datos completos de los farmacos
-    farmaco = []
-    for i in farmaco:
-        data = {"Droga": medicamentos[i],
+    farma = []
+    for i in range(len(medicamentos)):
+        dat = {"Droga": medicamentos[i],
                 "Laboratorio": laboratorios[i],
                 "Presentacion": presentaciones[i],
                 "Precio": precios[i]
                 }
-        farmaco.append(data)
-    df_data = pd.DataFrame(farmaco)
-    df_data.to_csv("Vademecum.csv", index=False, header=False, mode="a")
+        print(i)
+        farma.append(dat)
+    a_data = pd.DataFrame(farma)
+    print(a_data)
+    a_data.to_csv("Vademecum.csv", index=False, header=False, mode="a")
 
     click(XPATH="/html/body/div/div/div/div/div[2]/div/div/div[3]/ul/li[4]/a/i")
     time.sleep(15)
